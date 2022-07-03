@@ -11,7 +11,7 @@ console.log(SingleRound(player1, player2))
 
 */
 let randomValues;
-function computerPlay(){
+const computerPlay = () => {
   let randomNumber = Math.floor(Math.random() * 3);
   console.log(randomNumber);
   if(randomNumber === 0){
@@ -27,10 +27,19 @@ computerPlay()
 console.log(randomValues);
 
 
-function SingleRound(playerSelection, computerSelection){
+const SingleRound = (playerSelection, computerSelection) =>{
     return "You lose! Rock beats Paper"
 }
 let playerSelection = /'rock'/i;
 let computerSelection = computerPlay();
 console.log(SingleRound(playerSelection, computerSelection));
+
+const game = ()=>{
+
+}
+
+
+
+
+
 
