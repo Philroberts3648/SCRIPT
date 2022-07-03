@@ -28,7 +28,7 @@ console.log(randomValues);
 
 
 function SingleRound(playerSelection, computerSelection){
-    return 
+    return "You lose! Rock beats Paper"
 }
 let playerSelection = /'rock'/i;
 let computerSelection = computerPlay();
