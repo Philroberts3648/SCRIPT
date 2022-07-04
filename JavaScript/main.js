@@ -10,32 +10,22 @@ console.log(SingleRound(player1, player2))
 8.
 
 */
-let randomValues;
+
 const computerPlay = () => {
-  let randomNumber = Math.floor(Math.random() * 3);
-  console.log(randomNumber);
-  if(randomNumber === 0){
-    randomValues = 'Rock';
-  } else if(randomNumber === 1){
-    randomValues = 'Paper';
-  } else{
-    randomValues = 'Scissors';
-  }
-  return randomValues;
+    let randomValues = ['Rock', 'Paper', 'Scissors']
+    return randomValues[Math.floor(Math.random() * randomValues.length)];
 }
-computerPlay()
-console.log(randomValues);
 
 
 const SingleRound = (playerSelection, computerSelection) =>{
-    return "You lose! Rock beats Paper"
+    
 }
 let playerSelection = /'rock'/i;
 let computerSelection = computerPlay();
 console.log(SingleRound(playerSelection, computerSelection));
 
 const game = ()=>{
-
+       
 }
 
 
