@@ -15,14 +15,26 @@ const computerPlay = () => {
     let randomValues = ['Rock', 'Paper', 'Scissors']
     return randomValues[Math.floor(Math.random() * randomValues.length)];
 }
+console.log(computerPlay())
 
 
-const SingleRound = (playerSelection, computerSelection) =>{
-    
+const singleRound = (playerSelection, computerSelection) =>{
+    if(playerSelection === computerSelection){
+        return `It's a tie! You both picked ${playerSelection}.`;
+    } else if(playerSelection === /Rock/i && computerSelection === 'Paper'){
+        return 'You win! Rock beats Paper.';
+    } else if(playerSelection === /Paper/i && computerSelection === 'Scissors'){
+        return 'You win! Paper beats Scissors.';
+    } else if(playerSelection === /Scissors/i && computerSelection ==='Rock'){
+        return 'You win! Scissors beats Rock.';
+    } else{
+        return `You lose! ${computerSelection} won this round.`;
+    }
 }
-let playerSelection = /'rock'/i;
-let computerSelection = computerPlay();
-console.log(SingleRound(playerSelection, computerSelection));
+const playerSelection = 'Paper';
+const computerSelection = computerPlay();
+console.log(singleRound(playerSelection, computerSelection));
+
 
 const game = ()=>{
        
