@@ -26,26 +26,31 @@ const singleRound = (playerSelection, computerSelection) =>{
         return 'Game is a tie!';
     }
 
-    if(playerSelection === 'rock', computerSelection === 'paper'){
-        return 'You lose! Paper beats Rock';
-    } else {
-        return 'Player wins!';
+    if(playerSelection === 'rock'){
+        if(computerSelection === 'paper' || computerSelection === 'Scissors'){
+            return 'You lose! computer wins'
+        }else {
+            return 'Player wins!'
+        }
     }
+    if(playerSelection === 'paper'){
+        if(computerSelection === rock || computerSelection === 'scissors'){
+            return 'You lose!';
+        } else {
+            return 'Player wins!';
+        }
+    } 
 
-    if(playerSelection === 'scissors', computerSelection === 'rock'){
-        return 'You lose! Paper beats Rock';
-    } else {
-        return 'Player wins!';
+    if(playerSelection === 'scissors'){
+        if(computerSelection === 'Paper' || computerSelection === 'rock'){
+            return 'Player wins!'
+        } else{
+            return 'computer win!;'
+        }
     }
-
-    if(playerSelection === 'paper', computerSelection === 'Scissors'){
-        return 'You lose! Paper beats Rock';
-    } else{
-        return 'Player wins!';
-    }
+    
 }
-
-const playerSelection = "paper";
+const playerSelection = "scissors";
 const computerSelection = computerPlay();
 console.log(singleRound(playerSelection, computerSelection));
 
