@@ -1,9 +1,9 @@
 /*
-1. Declear a function variable called computerPlay
+1. Declare a function variable called computerPlay
 2. Function computerPlay will randomly return 'Rock', 'Paper' or 'Scissors'
-3. declear a function singleRound
+3. declare a function singleRound
 4. give the function 'singleRound'  parameters 'playerSelection' and 'computerSelection' 
-5. let the function return a string that declears a winner.
+5. let the function return a string that declares a winner.
 6. The returned string should be like;  "You Lose! Paper beats Rock"
 console.log(SingleRound(player1, player2))
 7.make player selection parameter case-insentive
@@ -12,33 +12,42 @@ console.log(SingleRound(player1, player2))
 */
 
 const computerPlay = () => {
-    let randomValues = ['Rock', 'Paper', 'Scissors']
-    return randomValues[Math.floor(Math.random() * randomValues.length)];
+    let valuesArray = ['Rock', 'Paper', 'Scissors']
+    let ranNumber = Math.floor(Math.random() * valuesArray.length)
+    let ranValues = valuesArray[ranNumber];
+    return ranValues;  
 }
-console.log(computerPlay())
-
 
 const singleRound = (playerSelection, computerSelection) =>{
+
+    playerSelection = playerSelection.toLowerCase();
+
     if(playerSelection === computerSelection){
-        return `It's a tie! You both picked ${playerSelection}.`;
-    } else if(playerSelection === /Rock/i && computerSelection === 'Paper'){
-        return 'You win! Rock beats Paper.';
-    } else if(playerSelection === /Paper/i && computerSelection === 'Scissors'){
-        return 'You win! Paper beats Scissors.';
-    } else if(playerSelection === /Scissors/i && computerSelection ==='Rock'){
-        return 'You win! Scissors beats Rock.';
+        return 'Game is a tie!';
+    }
+
+    if(playerSelection === 'rock', computerSelection === 'paper'){
+        return 'You lose! Paper beats Rock';
+    } else {
+        return 'Player wins!';
+    }
+
+    if(playerSelection === 'scissors', computerSelection === 'rock'){
+        return 'You lose! Paper beats Rock';
+    } else {
+        return 'Player wins!';
+    }
+
+    if(playerSelection === 'paper', computerSelection === 'Scissors'){
+        return 'You lose! Paper beats Rock';
     } else{
-        return `You lose! ${computerSelection} won this round.`;
+        return 'Player wins!';
     }
 }
-const playerSelection = 'Paper';
+
+const playerSelection = "paper";
 const computerSelection = computerPlay();
 console.log(singleRound(playerSelection, computerSelection));
-
-
-const game = ()=>{
-       
-}
 
 
 
