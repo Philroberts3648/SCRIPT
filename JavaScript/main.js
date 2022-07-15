@@ -9,7 +9,7 @@ console.log(SingleRound(player1, player2))
 7.make player selection parameter case-insentive
 8.
 
-*/
+*/     
 
 const computerPlay = () => {
     let valuesArray = ['Rock', 'Paper', 'Scissors']
@@ -54,6 +54,14 @@ const playerSelection = "scissors";
 const computerSelection = computerPlay();
 console.log(singleRound(playerSelection, computerSelection));
 
+
+const game = () => {
+    for(let i = 0; i < 5; i++){
+        playerSelection = i;
+        singleRound(playerSelection, computerSelection);
+    }
+}
+game();
 
 
 
